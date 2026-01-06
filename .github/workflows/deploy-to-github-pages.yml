@@ -4,7 +4,7 @@ on: [push]
 jobs:
   build-and-upload-artifacts:
     name: Build and upload artifacts
-    runs-on: [self-hosted, linux]
+    runs-on: [ubuntu-latest]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -28,7 +28,7 @@ jobs:
   deploy-to-github-pages:
     name: Deploy to `Github Pages`
     needs: build-and-upload-artifacts
-    runs-on: self-hosted
+    runs-on: [ubuntu-latest]
 
     environment:
       name: github-pages
